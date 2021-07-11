@@ -27,6 +27,8 @@ class Pelanggan extends CI_Controller
         $this->load->view('admin/layout/template', $data);
     }
 
+    
+
     public function insert()
     {
         $this->form_validation->set_rules($this->rules());

@@ -6,7 +6,7 @@
 
 <section class="content">
     <div class="box box-primary">
-        <form role="form" action="<?php echo base_url('admin/produkJamu/edit/' . $produkJamu[0]->id_produk); ?>" method="post"enctype="multipart/form-data">
+        <form role="form" action="<?php echo base_url('admin/produkJamu/edit/' . $produkJamu[0]->id_produk); ?>" method="post" enctype="multipart/form-data">
             <div class="box-body">
                 <div class="form-group">
                     <label>Nama Produk</label>
@@ -17,11 +17,6 @@
                     <label>Gambar</label>
                     <input class="form-control" type="file" name="gambar" value="<?php echo $produkJamu[0]->gambar ?>">
                     <p class="text-red"><?php echo form_error('gambar'); ?></p>
-                </div>
-                <div class="form-group">
-                    <label>Khasiat</label>
-                    <input class="form-control" type="text" name="khasiat" value="<?php echo $produkJamu[0]->khasiat ?>">
-                    <p class="text-red"><?php echo form_error('khasiat'); ?></p>
                 </div>
                 <div class="form-group">
                     <label>Harga</label>

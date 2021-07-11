@@ -20,7 +20,6 @@ class Barang extends CI_Controller
         return [
             ['field' => 'nama_barang', 'label' => 'nama_barang', 'rules' => 'required'],
             ['field' => 'harga', 'label' => 'harga', 'rules' => 'required'],
-            
             ['field' => 'stok', 'label' => 'stok', 'rules' => 'required']
         ];
     }

@@ -6,7 +6,7 @@
 
 <section class="content">
     <div class="box box-primary">
-        <form role="form" action="<?php echo base_url('admin/produkFranchise/edit/' . $produkFranchise[0]->id_franchise); ?>" method="post" enctype="multipart/form-data">
+        <form role="form" action="<?php echo base_url('admin/produkFranchise/edit/' . $produkFranchise[0]->id_franchise); ?>" method="post"enctype="multipart/form-data">
             <div class="box-body">
                 <div class="form-group">
                     <label>Nama Produk Franchise</label>

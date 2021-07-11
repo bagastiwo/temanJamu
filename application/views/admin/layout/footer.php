@@ -2,7 +2,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">https://adminlte.io</a>.</strong> All rights
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">https://adminlte.io</a>. <a>modify by</a>.<strong> Kuliah Industri 8 UMBY 2017.</strong></strong> All rights
     reserved.
   </footer>
 

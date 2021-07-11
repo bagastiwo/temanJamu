@@ -33,4 +33,5 @@ class ProdukJamu_model extends CI_Model
     {
         $this->db->delete($this->table, array($this->primary_key => $id));
     }
+
 }

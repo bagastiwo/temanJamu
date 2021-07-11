@@ -2,7 +2,7 @@
 class Data_user_model extends CI_Model
 {
     private $table = 'user';
-    private $primary_key = 'userid';
+    private $primary_key = 'userID';
 
     function __construct()
     {

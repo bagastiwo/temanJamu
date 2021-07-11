@@ -11,16 +11,15 @@ class Artikel extends CI_Controller
         parent::__construct();
         $this->load->model('Artikel_model');
         $this->load->library('Form_validation');
-        $this->gallery_path = realpath(APPPATH . './upload/product/');
-        $this->gallery_path_url = base_url() . './upload/product/';
+        $this->gallery_path = realpath(APPPATH . '../upload/product/');
+        $this->gallery_path_url = base_url() . 'upload/product/';
     }
 
     public function rules()
     {
         return [
             ['field' => 'judul_artikel', 'label' => 'judul_artikel', 'rules' => 'required'],
-            ['field' => 'isi_artikel', 'label' => 'isi_artikel', 'rules' => 'required'],
-            ['field' => 'gambar', 'label' => 'gambar', 'rules' => 'required']
+            ['field' => 'isi_artikel', 'label' => 'isi_artikel', 'rules' => 'required']
         ];
     }
 
@@ -46,8 +45,10 @@ class Artikel extends CI_Controller
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
             $config['file_ext_tolower'] = TRUE;
             $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
@@ -57,6 +58,7 @@ class Artikel extends CI_Controller
 
             $data['judul_artikel'] = $this->input->post('judul_artikel');
             $data['isi_artikel'] = $this->input->post('isi_artikel');
+
             $data['gambar'] = $photo;
 
             $this->Artikel_model->insert($data);
@@ -79,10 +81,10 @@ class Artikel extends CI_Controller
             $this->load->library('upload');
             $config['upload_path'] = './upload/product/'; // Sesuaikan sama folder dimana foto akan d simpan
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-            $config['file_ext_tolower'] = TRUE;
-            $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
@@ -90,8 +92,11 @@ class Artikel extends CI_Controller
                 $photo = $this->upload->file_name;
             }
 
+            $photo = $this->upload->file_name;
+
             $data['judul_artikel'] = $this->input->post('judul_artikel');
             $data['isi_artikel'] = $this->input->post('isi_artikel');
+
             $data['gambar'] = $photo;
 
             $this->Artikel_model->edit($id, $data);

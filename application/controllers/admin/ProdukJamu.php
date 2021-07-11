@@ -20,8 +20,6 @@ class ProdukJamu extends CI_Controller
         return [
             ['field' => 'nama_produk', 'label' => 'nama_produk', 'rules' => 'required'],
             ['field' => 'harga', 'label' => 'harga', 'rules' => 'required'],
-            ['field' => 'gambar', 'label' => 'gambar', 'rules' => 'required'],
-            ['field' => 'khasiat', 'label' => 'khasiat', 'rules' => 'required'],
             ['field' => 'stok', 'label' => 'stok', 'rules' => 'required']
         ];
     }
@@ -48,8 +46,10 @@ class ProdukJamu extends CI_Controller
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
             $config['file_ext_tolower'] = TRUE;
             $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
@@ -60,7 +60,6 @@ class ProdukJamu extends CI_Controller
             $data['nama_produk'] = $this->input->post('nama_produk');
             $data['harga'] = $this->input->post('harga');
             $data['stok'] = $this->input->post('stok');
-            $data['khasiat'] = $this->input->post('khasiat');
 
             $data['gambar'] = $photo;
 
@@ -84,10 +83,10 @@ class ProdukJamu extends CI_Controller
             $this->load->library('upload');
             $config['upload_path'] = './upload/product/'; // Sesuaikan sama folder dimana foto akan d simpan
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-            $config['file_ext_tolower'] = TRUE;
-            $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
@@ -95,11 +94,12 @@ class ProdukJamu extends CI_Controller
                 $photo = $this->upload->file_name;
             }
 
+            $photo = $this->upload->file_name;
+
 
             $data['nama_produk'] = $this->input->post('nama_produk');
             $data['harga'] = $this->input->post('harga');
             $data['stok'] = $this->input->post('stok');
-            $data['khasiat'] = $this->input->post('khasiat');
 
             $data['gambar'] = $photo;
 

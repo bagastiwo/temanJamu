@@ -28,7 +28,6 @@
                                         <th>ID Produk</th>
                                         <th>Nama Produk</th>
                                         <th>Gambar</th>
-                                        <th>Khasiat</th>
                                         <th>Harga</th>
                                         <th>Stok</th>
                                         <th></th>
@@ -45,7 +44,6 @@
                                             <td><?php echo $data->nama_produk ?></td>
                                             <?php header("Content-type: " . $data->gambar); ?>
                                             <?php echo "<td><img src='".base_url("upload/product/".$data->gambar)."' width='100' height='100'></td>";?>
-                                            <td><?php echo $data->khasiat ?></td>
                                             <td><?php echo $data->harga ?></td>
                                             <td><?php echo $data->stok ?></td>  
                                             <td align="center">

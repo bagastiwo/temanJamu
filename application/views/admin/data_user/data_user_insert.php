@@ -1,10 +1,10 @@
 <section class="content-header">
-    <h1>Insert Data User</h1>
+    <h1>Insert Data Admin</h1>
 </section>
 
 <section class="content">
     <div class="box box-primary">
-        <form role="form" action="<?php echo base_url('admin/Data_user/insert'); ?>" method="post">
+        <form role="form" action="<?php echo base_url('admin/data_user/insert'); ?>" method="post">
             <div class="box-body">
                 <div class="form-group">
                     <label>Username</label>
@@ -20,7 +20,7 @@
 
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="<?php echo base_url('admin/Data_user/') ?>" class="btn btn-primary">Batal</a>
+                <a href="<?php echo base_url('admin/data_user/') ?>" class="btn btn-primary">Batal</a>
             </div>
         </form>
     </div>

@@ -19,7 +19,6 @@ class ProdukFranchise extends CI_Controller
     {
         return [
             ['field' => 'nama_franchise', 'label' => 'nama_franchise', 'rules' => 'required'],
-            ['field' => 'gambar', 'label' => 'gambar', 'rules' => 'required'],
             ['field' => 'harga', 'label' => 'harga', 'rules' => 'required']
         ];
     }
@@ -46,14 +45,15 @@ class ProdukFranchise extends CI_Controller
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
             $config['file_ext_tolower'] = TRUE;
             $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
             } else {
                 $photo = $this->upload->file_name;
-                
             }
 
             $data['nama_franchise'] = $this->input->post('nama_franchise');
@@ -81,18 +81,16 @@ class ProdukFranchise extends CI_Controller
             $this->load->library('upload');
             $config['upload_path'] = './upload/product/'; // Sesuaikan sama folder dimana foto akan d simpan
             $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-            $config['file_ext_tolower'] = TRUE;
-            $config['overwrite'] = TRUE;
+            $config['max_size'] = '3840';
+            $config['max_width']  = '3840';
+            $config['max_height']  = '2160';
 
-            $this->load->library('upload', $config);
             $this->upload->initialize($config);
             if (!$this->upload->do_upload('gambar')) {
                 $photo = "";
             } else {
                 $photo = $this->upload->file_name;
-                
             }
-
 
             $data['nama_franchise'] = $this->input->post('nama_franchise');
             $data['harga'] = $this->input->post('harga');

@@ -18,11 +18,6 @@
                 <p class="text-red"><?php echo form_error('gambar'); ?></p>
             </div>
             <div class="form-group">
-                <label>Khasiat</label>
-                <input class="form-control" type="text" name="khasiat">
-                <p class="text-red"><?php echo form_error('harga'); ?></p>
-            </div>
-            <div class="form-group">
                 <label>Harga</label>
                 <input class="form-control" type="text" name="harga">
                 <p class="text-red"><?php echo form_error('harga'); ?></p>

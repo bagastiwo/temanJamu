@@ -19,8 +19,8 @@ class Data_user extends CI_Controller
 
     public function index()
     {
-        $data['Data_user'] = $this->Data_user_model->getAll();
-        $data['contents'] = 'admin/Data_user/Data_user_view';
+        $data['data_user'] = $this->Data_user_model->getAll();
+        $data['contents'] = 'admin/data_user/data_user_view';
         $this->load->view('admin/layout/template', $data);
     }
 
@@ -29,14 +29,14 @@ class Data_user extends CI_Controller
         $this->form_validation->set_rules($this->rules());
 
         if ($this->form_validation->run() === FALSE) {
-            $data['contents'] = 'admin/Data_user/Data_user_insert';
+            $data['contents'] = 'admin/data_user/data_user_insert';
             $this->load->view('admin/layout/template', $data);
         } else {
             $data['username'] = $this->input->post('username');
             $data['password'] = $this->input->post('password');
             $this->Data_user_model->insert($data);
             $this->session->set_flashdata('pesan', '<script>alert("Data berhasil disimpan")</script>');
-            redirect(base_url('index.php/admin/Data_user'));
+            redirect(base_url('index.php/admin/data_user'));
         }
     }
 
@@ -45,14 +45,15 @@ class Data_user extends CI_Controller
         $this->form_validation->set_rules($this->rules());
 
         if ($this->form_validation->run() === FALSE) {
-            $data['contents'] = 'admin/Data_user/Data_user_insert';
+            $data["data_user"] = $this->Data_user_model->getID($id);
+            $data['contents'] = 'admin/data_user/data_user_edit';
             $this->load->view('admin/layout/template', $data);
         } else {
             $data['username'] = $this->input->post('username');
             $data['password'] = $this->input->post('password');
-            $this->Data_user_model->insert($data);
-            $this->session->set_flashdata('pesan', '<script>alert("Data berhasil disimpan")</script>');
-            redirect(base_url('index.php/admin/Data_user'));
+            $this->Data_user_model->edit($id, $data);
+            $this->session->set_flashdata('pesan', '<script>alert("Data berhasil diubah")</script>');
+            redirect(base_url('index.php/admin/data_user'));
         }
     }
 
@@ -60,6 +61,6 @@ class Data_user extends CI_Controller
     {
         $this->Data_user_model->delete($id);
         $this->session->set_flashdata('pesan', '<script>alert("Data berhasil dihapus")</script>');
-        redirect(base_url('index.php/admin/Data_user'));
+        redirect(base_url('index.php/admin/data_user'));
     }
 }
