@@ -6,9 +6,8 @@ class Artikel_Front extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Artikel_front_model');
-        $this->load->library('Form_validation');
     }
-    
+
     public function index()
     {
         $data['artikel'] = $this->Artikel_front_model->getAll();
@@ -16,4 +15,10 @@ class Artikel_Front extends CI_Controller
         $this->load->view('front/artikel/artikel_view', $data);
     }
 
+    function selanjutnya()
+    {
+        $id = $this->uri->segment(3);
+        $data['data'] = $this->Artikel_front_model->per_id($id);
+        $this->load->view('front/artikel/detail_artikel', $data);
+    }
 }

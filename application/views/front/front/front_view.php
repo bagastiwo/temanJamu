@@ -191,102 +191,33 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-1.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU KUNYIT ASAM</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span class="price-sale">Rp.30.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-2.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU BERAS KENCUR</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.33.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
+                <?php
+                foreach ($produkjamu as $data) {
+                ?>
+                    <div class="col-sm col-md-6 col-lg ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url("upload/product/") . $data->gambar; ?>" alt="Colorlib Template">
+                            </a>
+                            <div class="text py-3 px-3">
+                                <h3><a href="#"><?php echo $data->nama_produk ?></a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="price-sale"><?php echo $data->harga ?></span></p>
+                                    </div>
+                                    <div class="rating">
+                                        <p class="text-right">
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-3.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU TEMULAWAK REMPAH</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.39.500</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-4.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU ASAM JAWA</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.43.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php }  ?>
             </div>
         </div>
     </section>
@@ -330,102 +261,33 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-5.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">PAKET JAMU KUNYIT ASAM DAN BERAS KENCUR</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span class="price-sale">Rp.77.500</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-6.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU BERAS KENCUR TANPA GULA</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.50.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
+                <?php
+                foreach ($produkjamu as $data) {
+                ?>
+                    <div class="col-sm col-md-6 col-lg ftco-animate">
+                        <div class="product">
+                            <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url("upload/product/") . $data->gambar; ?>" alt="Colorlib Template">
+                            </a>
+                            <div class="text py-3 px-3">
+                                <h3><a href="#"><?php echo $data->nama_produk ?></a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="price-sale"><?php echo $data->harga ?></span></p>
+                                    </div>
+                                    <div class="rating">
+                                        <p class="text-right">
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-7.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU BERAS KENCUR 1 LITER</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.100.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm col-md-6 col-lg ftco-animate">
-                    <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/product-8.jpg" alt="Colorlib Template">
-                            <div class="overlay"></div>
-                        </a>
-                        <div class="text py-3 px-3">
-                            <h3><a href="#">JAMU KUNYIT ASAM 350 ML</a></h3>
-                            <div class="d-flex">
-                                <div class="pricing">
-                                    <p class="price"><span>Rp.14.000</span></p>
-                                </div>
-                                <div class="rating">
-                                    <p class="text-right">
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                        <a href="#"><span class="ion-ios-star-outline"></span></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php }  ?>
             </div>
         </div>
     </section>

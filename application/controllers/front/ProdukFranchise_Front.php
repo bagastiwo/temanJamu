@@ -12,8 +12,8 @@ class ProdukFranchise_Front extends CI_Controller
     public function index()
     {
         $data['produkfranchise'] = $this->ProdukFranchise_front_model->getAll();
-        $data['contents'] = 'front/ProdukFranchise_front/ProdukFranchise_view';
-        $this->load->view('front/layout/template', $data);
+        $data['contents'] = 'front/ProdukFranchise/ProdukFranchise_view';
+        $this->load->view('front/ProdukFranchise/ProdukFranchise_view', $data);
     }
 
 }

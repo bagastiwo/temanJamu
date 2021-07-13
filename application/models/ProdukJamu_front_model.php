@@ -11,27 +11,15 @@ class ProdukJamu_front_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->table)->result();
+        $this->db->select('*');
+        $this->db->from('produkjamu');
+        $this->db->order_by('rand()');
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function getID($id)
     {
         return $this->db->get_where($this->table, array($this->primary_key => $id))->result();
     }
-
-    public function insert($data)
-    {
-        $this->db->insert($this->table, $data);
-    }
-
-    public function edit($id, $data)
-    {
-        $this->db->update($this->table, $data, array($this->primary_key => $id));
-    }
-
-    public function delete($id)
-    {
-        $this->db->delete($this->table, array($this->primary_key => $id));
-    }
-
 }

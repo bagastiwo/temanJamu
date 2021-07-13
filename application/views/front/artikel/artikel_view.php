@@ -1,6 +1,13 @@
 <?php
 $page = "artikel_view";
+function readmore($string)
+{
+    $string = substr($string, 0, 100);
+    $string = $string . "...";
+    return $string;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,142 +101,25 @@ $page = "artikel_view";
             <div class="row">
                 <div class="col-lg-8 ftco-animate">
                     <div class="row">
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita1.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                        <?php
+                        foreach ($artikel as $data) {
+                        ?>
+                            <div class="col-md-12 d-flex ftco-animate">
+                                <div class="blog-entry align-self-stretch d-md-flex">
+                                    <a href="<?php echo base_url('front/artikel/detail_artikel/' . $data->id_artikel); ?>" class="block-20" style="background-image: url(<?php echo base_url("upload/product/") . $data->gambar; ?>">
+                                    </a>
+                                    <div class="text d-block pl-md-4">
+                                        <h3 class="heading"><a href="<?php echo base_url('front/artikel/detail_artikel/' . $data->id_artikel); ?>"><?php echo $data->judul_artikel ?></a></h3>
+                                        <p><?php
+                                            $string = $data->isi_artikel;
+                                            echo readmore($string) ?></p>
+                                        <p><a href="<?php echo base_url('front/artikel/selanjutnya/' . $data->id_artikel); ?>" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
                                     </div>
-                                    <h3 class="heading"><a href="#">Manfaat Jamu Sepanjang Pandemi Covid-19, Begini Buat Jamu Beras Kencur</a></h3>
-                                    <p>Jamu merupakan minuman herbal hasil dari beberapa kombinasi rempah-rempah yang kaya gizi dan nutrisi. Ini cara mudah buat jamu beras kencur.</p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita2.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Cara Membuat Jamu Kunyit Asem yang Kaya Manfaat Kesehatan</a></h3>
-                                    <p>Kunyit terkenal memiliki manfaat yang baik bagi kesehatan tubuh. Jamu kunyit asem merupakan salah satu olahan kunyit yang banyak dikonsumsi masyarakat Indonesia.</p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita3.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Selama Pandemi, Omzet Jamu di Pasar Global Tembus US$ 138,5 M</a></h3>
-                                    <p>Selama pandemi Covid-19, omzet produk herbal dan jamu di pasar global meroket hingga US$ 138,5 miliar.</p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita4.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Jahe dan Kunyit Cegah Infeksi Virus dan Bakteri, Ini Syaratnya</a></h3>
-                                    <p>Jahe, kunyit, dan temulawak tambah populer sejak pandemi Covid-19. Tanaman empon-empon itu dianggap dapat mencegah infeksi virus. </p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita5.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">New Normal, Pedagang Jamu Terapkan Protokol Kesehatan</a></h3>
-                                    <p>Penjual jamu keliling Tidar (kanan) dengan menggunakan masker dan pelindung wajah melayani pembeli di kawasan Pasar Baru, Jakarta, Selasa, 9 Juni 2020. Tidar menerapkan protokol kesehatan jelang pemberlakuan protokol tatanan normal baru di Jakarta untuk tetap mencari nafkah.</p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 d-flex ftco-animate">
-                            <div class="blog-entry align-self-stretch d-md-flex">
-                                <a href="detail_blog.php" class="block-20" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita6.jpg);">
-                                </a>
-                                <div class="text d-block pl-md-4">
-                                    <div class="meta mb-3">
-                                        <div><a href="#">April 9, 2021</a></div>
-                                        <div><a href="#">Admin</a></div>
-                                        <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                    </div>
-                                    <h3 class="heading"><a href="#">Hempaskan Radang Tenggorokan dengan Jamu Godokan Sirih</a></h3>
-                                    <p>Di masa pandemi COVID-19, rasa gatal atau nyeri di tenggorokan menimbulkan kekhawatiran tersendiri. Pasalnya gejala penyakit yang disebabkan oleh virus Corona baru itu ditandai dengan rasa tidak nyaman di tenggorokan hingga batuk.</p>
-                                    <p><a href="detail_blog.php" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
-                                </div>
-                            </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div> <!-- .col-md-8 -->
-                <div class="col-lg-4 sidebar ftco-animate">
-                    <div class="sidebar-box ftco-animate">
-                        <h3 CLASS="heading">BLOG TERBARU</h3>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita1.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="detail_blog.php">Manfaat Jamu Sepanjang Pandemi Covid-19, Begini Buat Jamu Beras Kencur</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2021</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita2.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="detail_blog.php">Cara Membuat Jamu Kunyit Asem yang Kaya Manfaat Kesehatan</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2021</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4" style="background-image: url(<?php echo base_url('asset/template/front') ?>/images/berita3.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading-1"><a href="detail_blog.php">Selama Pandemi, Omzet Jamu di Pasar Global Tembus US$ 138,5 M</a></h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="icon-calendar"></span> April 09, 2021</a></div>
-                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section> <!-- .section -->
 

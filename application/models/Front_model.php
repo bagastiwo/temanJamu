@@ -11,7 +11,12 @@ class Front_model extends CI_Model
 
     public function getAll()
     {
-        return $this->db->get($this->table)->result();
+        $this->db->select('*');
+        $this->db->from('produkjamu');
+        $this->db->order_by('rand()');
+        $this->db->limit(4);
+        $query = $this->db->get();
+        return $query->result();
     }
 
     public function getID($id)
