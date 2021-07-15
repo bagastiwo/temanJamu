@@ -54,14 +54,14 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url('front/front') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
+            <a class="navbar-brand" href="<?php echo base_url('home') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="<?php echo base_url('front/front') ?>" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="<?php echo base_url('home') ?>" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
                         <div class="dropdown-menu active" aria-labelledby="dropdown04">
@@ -469,7 +469,7 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script><a href="#" target=""> Temanjamu.id </a> All rights reserved
+                        </script><a href="#" target=""> Temanjamu.id </a> All rights reserved  | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

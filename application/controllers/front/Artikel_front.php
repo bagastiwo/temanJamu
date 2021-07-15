@@ -15,10 +15,10 @@ class Artikel_Front extends CI_Controller
         $this->load->view('front/artikel/artikel_view', $data);
     }
 
-    function selanjutnya()
+    public function detail_artikel($id)
     {
-        $id = $this->uri->segment(3);
-        $data['data'] = $this->Artikel_front_model->per_id($id);
+        $data['artikel'] = $this->Artikel_front_model->detail_artikel($id);
         $this->load->view('front/artikel/detail_artikel', $data);
     }
+
 }

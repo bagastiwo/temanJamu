@@ -1,6 +1,6 @@
 <?php
 
-class ProdukJamu_Front extends CI_Controller
+class ProdukJamu_front extends CI_Controller
 {
     public function __construct()
     {
@@ -12,8 +12,8 @@ class ProdukJamu_Front extends CI_Controller
     public function index()
     {
         $data['produkjamu'] = $this->ProdukJamu_front_model->getAll();
-        $data['contents'] = 'front/Produkjamu/Produkjamu_view';
-        $this->load->view('front/Produkjamu/Produkjamu_view', $data);
+        $data['contents'] = 'front/ProdukJamu/ProdukJamu_view';
+        $this->load->view('front/ProdukJamu/ProdukJamu_view', $data);
     }
 
 }

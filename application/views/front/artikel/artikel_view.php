@@ -64,14 +64,14 @@ function readmore($string)
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url('front/front') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
+            <a class="navbar-brand" href="<?php echo base_url('home') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="<?php echo base_url('front/front') ?>" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="<?php echo base_url('home') ?>" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
                         <div class="dropdown-menu active" aria-labelledby="dropdown04">
@@ -106,14 +106,14 @@ function readmore($string)
                         ?>
                             <div class="col-md-12 d-flex ftco-animate">
                                 <div class="blog-entry align-self-stretch d-md-flex">
-                                    <a href="<?php echo base_url('front/artikel/detail_artikel/' . $data->id_artikel); ?>" class="block-20" style="background-image: url(<?php echo base_url("upload/product/") . $data->gambar; ?>">
+                                    <a href="<?php echo base_url('front/artikel_front/detail_artikel/' . $data->id_artikel); ?>" class="block-20" style="background-image: url(<?php echo base_url("upload/product/") . $data->gambar; ?>">
                                     </a>
                                     <div class="text d-block pl-md-4">
-                                        <h3 class="heading"><a href="<?php echo base_url('front/artikel/detail_artikel/' . $data->id_artikel); ?>"><?php echo $data->judul_artikel ?></a></h3>
+                                        <h3 class="heading"><a href="<?php echo base_url('front/artikel_front/detail_artikel/' . $data->id_artikel); ?>"><?php echo $data->judul_artikel ?></a></h3>
                                         <p><?php
                                             $string = $data->isi_artikel;
                                             echo readmore($string) ?></p>
-                                        <p><a href="<?php echo base_url('front/artikel/selanjutnya/' . $data->id_artikel); ?>" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
+                                        <p><a href="<?php echo base_url('front/artikel_front/detail_artikel/'.$data->id_artikel); ?>" class="btn btn-primary py-2 px-3">Selengkapnya</a></p>
                                     </div>
                                 </div>
                             </div>

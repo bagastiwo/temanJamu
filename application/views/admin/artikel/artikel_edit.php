@@ -14,8 +14,8 @@
                     <p class="text-red"><?php echo form_error('judul_artikel'); ?></p>
                 </div>
                 <div class="form-group">
-                    <label>Isi Artikel</label>
-                    <input class="form-control" type="text" name="isi_artikel" value="<?php echo $artikel[0]->isi_artikel ?>">
+                    <label for="exampleFormControlTextarea1">Isi Artikel</label>
+                    <textarea name="isi_artikel"><?php echo $artikel[0]->isi_artikel ?></textarea>
                     <p class="text-red"><?php echo form_error('isi_artikel'); ?></p>
                 </div>
                 <div class="form-group">

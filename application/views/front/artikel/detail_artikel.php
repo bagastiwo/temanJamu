@@ -58,14 +58,14 @@ $page = "detail_artikel";
   </div>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo base_url('front/front') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
+      <a class="navbar-brand" href="<?php echo base_url('home') ?>"><img class="img-fluid" src="<?php echo base_url('asset/template/front') ?>/images/logo_temanjamu.png" alt="Colorlib Template"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="<?php echo base_url('front/front') ?>" class="nav-link">Home</a></li>
+          <li class="nav-item active"><a href="<?php echo base_url('home') ?>" class="nav-link">Home</a></li>
           <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produk</a>
             <div class="dropdown-menu active" aria-labelledby="dropdown04">
@@ -96,7 +96,7 @@ $page = "detail_artikel";
     <div class="container">
       <div class="row">
         <div class="col-lg-8 ftco-animate">
-          <h2 class="mb-3"><?php echo $artikel ?></h2>
+          <h2 class="mb-3"><?php echo $artikel[0]->judul_artikel ?></h2>
           <p>
             <img src="<?php echo base_url("upload/product/") . $artikel[0]->gambar; ?>" alt="" class="img-fluid">
           </p>

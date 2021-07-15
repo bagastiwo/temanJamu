@@ -1,6 +1,6 @@
 <?php
 
-class ProdukFranchise_Front extends CI_Controller
+class ProdukFranchise_front extends CI_Controller
 {
     public function __construct()
     {

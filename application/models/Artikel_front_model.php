@@ -19,8 +19,12 @@ class Artikel_front_model extends CI_Model
         return $this->db->get_where($this->table, array($this->primary_key => $id))->result();
     }
 
-    function per_id($id)
+
+    public function detail_artikel($id)
     {
+      // echo "<pre>";
+      // echo $id;
+      // exit;
         $this->db->where('id_artikel', $id);
         $query = $this->db->get('artikel');
         return $query->result();
